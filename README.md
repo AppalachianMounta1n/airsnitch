@@ -88,6 +88,13 @@ The following steps only need to be executed once to initialize the repository a
 		libssl-dev libdbus-1-dev pkg-config build-essential net-tools python3-venv \
 		aircrack-ng rfkill git dnsmasq tcpreplay macchanger
 
+To configure the prerequisites on Fedora-based distributions, install the dependencies like below:
+
+	sudo dnf update
+	sudo dnf install libnl3-devel openssl-devel dbus-devel kg-config \
+    	gcc gcc-c++ make net-tools python3 python3-virtualenv aircrack-ng \
+		rfkill git dnsmasq tcpreplay macchanger
+
 Next, clone this repository, and run the following script in the root directory of the repository to compile our modified hostap release:
 
 	./setup.sh
