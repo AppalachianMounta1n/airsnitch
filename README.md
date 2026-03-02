@@ -117,6 +117,16 @@ Before every use, you must load the Python environment as root:
 
 You should now [disable Wi-Fi in your network manager](https://github.com/vanhoefm/libwifi/blob/master/docs/linux_tutorial.md#id-disable-wifi) so it will not interfere with AirSnitch. Optionally, check using `sudo airmon-ng check` to see which other processes might be using the wireless network card and might interfere with AirSnitch.
 
+To use this via Docker, run the following series of commands. Podman can also be used.
+
+	docker build -t airsnitch .
+	docker run -it --rm --privileged --network host -v $(pwd)/client.conf:/opt/airsnitch/airsnitch/research/client.conf:ro airsnitch
+
+Once inside the Docker image, run these commands.
+
+	source venv/bin/activate
+	./airsnitch.py wlan2 --c2c-ip wlan3 --no-ssid-check --same-bss
+
 <a id="id-everyuse-net"></a>
 ### [3.2. Network configuration](#id-everyuse-net)
 
