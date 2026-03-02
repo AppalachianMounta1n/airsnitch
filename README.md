@@ -120,7 +120,7 @@ You should now [disable Wi-Fi in your network manager](https://github.com/vanhoe
 To use this via Docker, run the following series of commands. Podman can also be used.
 
 	docker build -t airsnitch .
-	docker run -it --rm --privileged --network host -v $(pwd)/client.conf:/opt/airsnitch/airsnitch/research/client.conf:ro airsnitch
+	docker run -it --rm --privileged --network host airsnitch
 
 Once inside the Docker image, run these commands.
 
